@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct BoardsApp: App {
+    init() {
+        FirebaseApp.configure()
+    }
+    
+    
     var body: some Scene {
+        let loginModel = LoginModel()
+        
         WindowGroup {
-            ContentView()
+            LoginView().environmentObject(loginModel)
+            
         }
     }
 }

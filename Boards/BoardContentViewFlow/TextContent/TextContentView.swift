@@ -7,18 +7,22 @@
 
 import SwiftUI
 
-struct TextContent: View {
+struct TextContentView: View {
+    var tc: TextContent
+    
+    init(_ textContent: TextContent) {
+        tc = textContent
+    }
+    
+    
     var body: some View {
         ZStack {
+            Color(UIColor.secondarySystemBackground).cornerRadius(10)
             VStack(alignment: .leading) {
-                Text("Post").font(.title).bold()
+                Text(tc.title).font(.title).bold()
+                Text(tc.text)
             }
+            .padding()
         }
-    }
-}
-
-struct TextContent_Previews: PreviewProvider {
-    static var previews: some View {
-        TextContent()
     }
 }

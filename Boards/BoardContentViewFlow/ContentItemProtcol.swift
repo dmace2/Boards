@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol ContentItem {
-    var id: Int {get}
-    var title: String {get set}
+class ContentItem: Identifiable {
+    var id: String = ""
+    var title: String = ""
+    var type: String = ""
 }

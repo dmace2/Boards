@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class ImageContent: ContentItem {
+    var url: String = ""
+    
+    init(id: String, title: String, url: String) {
+        super.init()
+        self.id = id
+        self.title = title
+        self.url = url
+        self.type = "image"
+    }
+}
