@@ -7,58 +7,53 @@
 
 import SwiftUI
 
+
 struct BoardContentView: View {
-    var board: Board
-    @ObservedObject var viewModel: BoardContentViewModel
-    let columns = [
+    @EnvironmentObject private var viewModel: BoardContentViewModel
+    @State private var isShowingDetailView = false
+    
+    @State var showingAlert = false
+    @State var alertText = ""
+    
+    private let columns = [
         GridItem(.flexible()),
-    ]
+    ] //one col for items
     
-    init(_ board: Board) {
-        self.board = board
-        self.viewModel = BoardContentViewModel(from: board)
-    }
-    
-    func placeOrder() { }
-    func adjustOrder() { }
-    func cancelOrder() { }
     
     var body: some View {
         VStack {
-            Menu {
-                NavigationLink(destination: Text("Destination_1")) {
-                    Label("Text", systemImage: "doc.text")
-                }
-                NavigationLink(destination: Text("Destination_1")) {
-                    Label("Image", systemImage: "photo")
-                }
-            } label: {
-                Spacer()
-                Label("New Item", systemImage: "plus")
-                Spacer()
-            }
-            .padding()
-            .background(Color(UIColor.secondarySystemBackground)).cornerRadius(10)
-            
-            ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(viewModel.content) {contentItem in
-                        if contentItem.type == "text" {
+            CreateBoardOptionView().environmentObject(viewModel).padding(.horizontal, 10)
+            List {
+                ForEach(viewModel.content) { contentItem in
+                    if contentItem.type == "text" {
+                        NavigationLink(destination: TextContentCreationView(content: contentItem as! TextContent).environmentObject(viewModel), label: {
                             TextContentView(contentItem as! TextContent)
-                            
-                        } else if contentItem.type == "image" {
-                            ImageContentView(contentItem as! ImageContent)
-                            
-                        }
+                        })
+                    } else if contentItem.type == "image" {
+                        ImageContentView(contentItem as! ImageContent)
+                        
                     }
                 }
+                .onDelete(perform: delete)
             }
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
-        .padding()
         .onAppear {
             self.viewModel.fetchData()
         }
-        .navigationTitle(board.name)
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Error Deleting Board"), message: Text(alertText))
+        }
+        .navigationTitle(viewModel.board.name)
+    }
+    
+    func delete(at offsets: IndexSet) {
+        viewModel.deleteItems(rows: offsets, completion: { error in
+            if let e = error {
+                alertText = e.localizedDescription
+                showingAlert = true
+            }
+        })
     }
 }
 

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHX-D9-eX5">
-                                <rect key="frame" x="50" y="197" width="315" height="415"/>
+                                <rect key="frame" x="65" y="105" width="284" height="390"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OHX-D9-eX5" secondAttribute="height" id="HiC-PF-Gw9"/>
                                 </constraints>
@@ -31,6 +31,7 @@
                             <constraint firstItem="OHX-D9-eX5" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="6PB-17-bGY"/>
                             <constraint firstItem="OHX-D9-eX5" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="50" id="VhT-5f-KU2"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="OHX-D9-eX5" secondAttribute="trailing" constant="50" id="kAv-yc-2cH"/>
+                            <constraint firstItem="OHX-D9-eX5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="50" id="wK9-Iz-j57"/>
                         </constraints>
                     </view>
                 </viewController>

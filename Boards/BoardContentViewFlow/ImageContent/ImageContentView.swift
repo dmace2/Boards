@@ -26,6 +26,7 @@ struct ImageContentView : View {
             Color(UIColor.secondarySystemBackground).cornerRadius(10)
             VStack(alignment: .center) {
                 Text(content.title).font(.title).bold()
+                Divider()
                 if let url = imageURL{
                     WebImage(url: url)
                         .resizable()

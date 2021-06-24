@@ -39,6 +39,9 @@
 		F0898EBE2683B142008C8F71 /* TextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0898EBD2683B142008C8F71 /* TextContent.swift */; };
 		F0898EC12683B8FB008C8F71 /* ImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0898EC02683B8FB008C8F71 /* ImageContentView.swift */; };
 		F0898EC52683BAF3008C8F71 /* ImageContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0898EC42683BAF3008C8F71 /* ImageContent.swift */; };
+		F0898EC72683D780008C8F71 /* TextContentCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0898EC62683D780008C8F71 /* TextContentCreationView.swift */; };
+		F0898EC92683D79B008C8F71 /* ImageContentCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0898EC82683D79B008C8F71 /* ImageContentCreationView.swift */; };
+		F0898ECB2683DA62008C8F71 /* CreateBoardOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0898ECA2683DA62008C8F71 /* CreateBoardOptionView.swift */; };
 		F0FC13A62683A261008C18FB /* BoardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FC13A52683A261008C18FB /* BoardsApp.swift */; };
 		F0FC13AA2683A262008C18FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FC13A92683A262008C18FB /* Assets.xcassets */; };
 		F0FC13AD2683A262008C18FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FC13AC2683A262008C18FB /* Preview Assets.xcassets */; };
@@ -80,6 +83,9 @@
 		F0898EBD2683B142008C8F71 /* TextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContent.swift; sourceTree = "<group>"; };
 		F0898EC02683B8FB008C8F71 /* ImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentView.swift; sourceTree = "<group>"; };
 		F0898EC42683BAF3008C8F71 /* ImageContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContent.swift; sourceTree = "<group>"; };
+		F0898EC62683D780008C8F71 /* TextContentCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContentCreationView.swift; sourceTree = "<group>"; };
+		F0898EC82683D79B008C8F71 /* ImageContentCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentCreationView.swift; sourceTree = "<group>"; };
+		F0898ECA2683DA62008C8F71 /* CreateBoardOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardOptionView.swift; sourceTree = "<group>"; };
 		F0FC13A22683A261008C18FB /* Boards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FC13A52683A261008C18FB /* BoardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardsApp.swift; sourceTree = "<group>"; };
 		F0FC13A92683A262008C18FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				F0898EA72683A5A0008C8F71 /* BoardContentView.swift */,
 				F0898EB92683AF8B008C8F71 /* BoardContentViewModel.swift */,
 				F0898EBB2683B013008C8F71 /* ContentItemProtcol.swift */,
+				F0898ECA2683DA62008C8F71 /* CreateBoardOptionView.swift */,
 			);
 			path = BoardContentViewFlow;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 			children = (
 				F0898EB62683AD94008C8F71 /* TextContentView.swift */,
 				F0898EBD2683B142008C8F71 /* TextContent.swift */,
+				F0898EC62683D780008C8F71 /* TextContentCreationView.swift */,
 			);
 			path = TextContent;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 			children = (
 				F0898EC02683B8FB008C8F71 /* ImageContentView.swift */,
 				F0898EC42683BAF3008C8F71 /* ImageContent.swift */,
+				F0898EC82683D79B008C8F71 /* ImageContentCreationView.swift */,
 			);
 			path = ImageContent;
 			sourceTree = "<group>";
@@ -379,6 +388,7 @@
 				F0898EBE2683B142008C8F71 /* TextContent.swift in Sources */,
 				F0898E8A2683A4A4008C8F71 /* ColorExtension.swift in Sources */,
 				F0898EBC2683B013008C8F71 /* ContentItemProtcol.swift in Sources */,
+				F0898EC92683D79B008C8F71 /* ImageContentCreationView.swift in Sources */,
 				F0898EC12683B8FB008C8F71 /* ImageContentView.swift in Sources */,
 				F0898EAD2683A5A0008C8F71 /* BoardSettingsViewModel.swift in Sources */,
 				F0898E7F2683A47C008C8F71 /* LoginModel.swift in Sources */,
@@ -387,11 +397,13 @@
 				F0FC13A62683A261008C18FB /* BoardsApp.swift in Sources */,
 				F0898EA22683A560008C8F71 /* BoardListCellView.swift in Sources */,
 				F0898E982683A509008C8F71 /* SettingsViewModel.swift in Sources */,
+				F0898ECB2683DA62008C8F71 /* CreateBoardOptionView.swift in Sources */,
 				F0898EC52683BAF3008C8F71 /* ImageContent.swift in Sources */,
 				F0898EA42683A560008C8F71 /* BoardListView.swift in Sources */,
 				F0898EA32683A560008C8F71 /* Board.swift in Sources */,
 				F0898EA12683A560008C8F71 /* BoardGeneratorView.swift in Sources */,
 				F0898EA52683A560008C8F71 /* BoardViewModel.swift in Sources */,
+				F0898EC72683D780008C8F71 /* TextContentCreationView.swift in Sources */,
 				F0898EAC2683A5A0008C8F71 /* BoardSettingsView.swift in Sources */,
 				F0898E942683A4D0008C8F71 /* User.swift in Sources */,
 				F0898E812683A47C008C8F71 /* LoginView.swift in Sources */,

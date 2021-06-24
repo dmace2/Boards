@@ -16,7 +16,7 @@ struct BoardContentContainerView: View {
     
     var body: some View {
         TabView {
-            BoardContentView(board).tabItem({
+            BoardContentView().tabItem({
                 Label("Board", systemImage: "note.text")
             })
             BoardSettingsView(board).tabItem({

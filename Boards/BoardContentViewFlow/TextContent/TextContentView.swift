@@ -17,10 +17,12 @@ struct TextContentView: View {
     
     var body: some View {
         ZStack {
-            Color(UIColor.secondarySystemBackground).cornerRadius(10)
+//            Color(UIColor.secondarySystemBackground).cornerRadius(10)
+            tc.color.cornerRadius(10)
             VStack(alignment: .leading) {
                 Text(tc.title).font(.title).bold()
-                Text(tc.text)
+                Divider()
+                Text(tc.text).lineLimit(5)
             }
             .padding()
         }
