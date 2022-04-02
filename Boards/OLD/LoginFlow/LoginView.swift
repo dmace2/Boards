@@ -1,14 +1,14 @@
 //
 //  LoginView.swift
-//  Boards
+//  Dreamer
 //
-//  Created by Dylan Mace on 4/1/22.
+//  Created by Dylan Mace on 6/16/21.
 //
 
 import SwiftUI
-import FirebaseAuth
 
-struct LoginView: View {
+struct LoginViewOLD: View {
+    
     @EnvironmentObject var viewModel: LoginModel
     
     var body: some View {
@@ -16,12 +16,11 @@ struct LoginView: View {
                 if viewModel.isSignedIn {
                     NavigationView{
                         BoardListView()
-
                             .navigationTitle("Content")
                     }
                         .navigationViewStyle(.automatic)
                 } else {
-                    AuthView()
+                    SignInView()
                 }
             }
         .onAppear {
@@ -30,8 +29,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginView().environmentObject(LoginModel())
+//    }
+//}

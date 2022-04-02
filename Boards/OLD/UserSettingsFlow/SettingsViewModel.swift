@@ -24,7 +24,7 @@ class SettingsViewModel: ObservableObject {
                     let imageURL = data?["imageURL"] as? String ?? ""
                     
                     return User(id: userid, name: name, imageURL: imageURL, email: email)
-                }!
+                } as! User
                 print(self.user)
             }
         }

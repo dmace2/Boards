@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.dmace.Boards</string>
+	<string>com.dmace.boardsapp</string>
 	<key>PROJECT_ID</key>
 	<string>dreamer-21514</string>
 	<key>STORAGE_BUCKET</key>
 	<string>dreamer-21514.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:1009915912559:ios:c9473ad20121974a6d889a</string>
 	<key>DATABASE_URL</key>

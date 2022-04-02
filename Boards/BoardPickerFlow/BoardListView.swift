@@ -1,68 +1,52 @@
 //
-//  BoardListView.swift
-//  Dreamer
+//  BoardPickerFlow.swift
+//  Boards
 //
-//  Created by Dylan Mace on 6/16/21.
+//  Created by Dylan Mace on 4/1/22.
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct BoardListView: View {
-    @ObservedObject var viewModel = BoardViewModel()
-    @EnvironmentObject var loginModel: LoginModel
-    
-    @State var showingAlert = false
-    @State var alertText = ""
-    @State var showNewBoardView = false
-    
-    
+    @StateObject var boardModel = BoardViewModel()
     
     var body: some View {
-        ZStack {
-            VStack {
-                List {
-                    ForEach(viewModel.boards) { board in
-                        NavigationLink(destination: BoardContentContainerView(board), label: {
-                            ZStack {
-                                board.color.cornerRadius(10)
-                                BoardListCellView(board).padding()
-                            }
-                            .ignoresSafeArea()
-                    
-                        })
-                        
+        VStack {
+            List {
+                ForEach(boardModel.boards) { board in
+                    NavigationLink(destination: BoardContentContainerView(board)) {
+                        ZStack {
+                            board.color.cornerRadius(10)
+                            BoardListCellView(board).padding()
+                        }
+//                        .padding()
+                        .ignoresSafeArea()
                     }
-                    .onDelete(perform: delete)
+                    .padding()
+                   
                 }
-                .onAppear() {self.viewModel.fetchData()}
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Error Deleting Board"), message: Text(alertText))
-                }
+                
             }
-            
+            .listStyle(.sidebar)
+            .onAppear {
+                boardModel.fetchData()
+            }
         }
         .navigationBarItems(leading: NavigationLink(destination: UserSettingsView(),
                                                     label: { Image(systemName: "gear")})
                                      .animation(.easeInOut(duration: 0.3)),
                             trailing:
-                                NavigationLink(destination: BoardGeneratorView(id: UUID().uuidString),
+                                NavigationLink(destination: BoardGenerator(id: UUID().uuidString)
+                                    .environmentObject(boardModel),
                                                label: { Image(systemName: "plus")})
                                 .animation(.easeInOut(duration: 0.3))
         )
         .navigationTitle("Boards")
     }
-    
-    func delete(at offsets: IndexSet) {
-        self.viewModel.deleteBoards(rows: offsets, completion: { error in
-            if let e = error {
-                alertText = e.localizedDescription
-                showingAlert = true
-            }
-        })
-    }
 }
 
-struct BoardListView_Previews: PreviewProvider {
+struct BoardPickerFlow_Previews: PreviewProvider {
     static var previews: some View {
         BoardListView()
     }
